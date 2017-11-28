@@ -1,3 +1,4 @@
+this bug occur on `Rails 5.2.0.beta1 + web_console + meta_request`.
 
 At first, rails start.
 
@@ -18,7 +19,8 @@ Use Ctrl-C to stop
 ```
 
 Next, request `http://localhost:5000` from browser.
-rails hang up `SystemStackError`.
+rails hang up `SystemStackError`. this may couse by `web_console`. it is not
+ruby bug. it is the bug of web_console or rails.
 
 ```
 Started GET "/" for 127.0.0.1 at 2017-11-28 14:23:29 +0900
@@ -1640,6 +1642,7 @@ puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 ```
 
 Next, `ctrl + C` stop server, ruby hang up.
+this might be the bug of ruby.
 
 ```
 
